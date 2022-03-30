@@ -1,0 +1,185 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --color-orange: hsl(25, 97%, 53%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-grey: hsl(217, 12%, 63%);
+  --color-medium-grey: hsl(216, 12%, 54%);
+  --color-dark-blue: hsl(213, 19%, 18%);
+  --color-very-dark-blue: hsl(216, 12%, 8%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Overpass', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-very-dark-blue);
+}
+
+/* ----------------------------------- */
+/* CONTAINER, COMPONENT STYLES
+/* ----------------------------------- */
+.component {
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3rem;
+  background-color: var(--color-dark-blue);
+  max-width: 40rem;
+}
+
+.container {
+  position: relative;
+}
+
+/* ----------------------------------- */
+/* MAIN PART - RATING SECTION
+/* ----------------------------------- */
+.rating {
+  transition: all 0.3s;
+}
+
+.rating__star-box,
+.rating__button {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: rgba(124, 135, 152, 0.15);
+  height: 4.5rem;
+  width: 4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rating__star-box {
+  margin-bottom: 2rem;
+  align-self: flex-start;
+}
+
+.rating__heading {
+  color: var(--color-white);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.rating__paragraph {
+  color: var(--color-light-grey);
+}
+
+.rating__rates {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 0;
+}
+
+.rating__button {
+  border: none;
+  cursor: pointer;
+  color: var(--color-light-grey);
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.rating__button--clicked {
+  color: var(--color-white);
+  background-color: var(--color-light-grey);
+}
+
+.rating__button:hover {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+}
+
+.rating__button--clicked:hover {
+  color: var(--color-white);
+  background-color: var(--color-light-grey);
+}
+
+.rating__submit {
+  border: none;
+  width: 100%;
+  background-color: var(--color-orange);
+  border-radius: 5rem;
+  padding: 1.3rem 0;
+  color: var(--color-white);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.rating__submit:hover {
+  background-color: var(--color-white);
+  color: var(--color-orange);
+}
+
+/* -------------------------------------- */
+/* AFTER SUBMIT PART - THANK YOU SECTION
+/* -------------------------------------- */
+.thank {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.thank__img {
+  margin-bottom: 2rem;
+}
+
+.thank__rate {
+  border-radius: 5rem;
+  padding: 1rem 2rem;
+  background-color: rgba(124, 135, 152, 0.15);
+  color: var(--color-orange);
+  margin-bottom: 3rem;
+}
+
+.thank__heading {
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.thank__paragraph {
+  color: var(--color-light-grey);
+  text-align: center;
+}
+
+/* -------------------------------------- */
+/* RESPONSIVE STYLES - MOBILE
+/* -------------------------------------- */
+@media only screen and (max-width: 25em) {
+  .component {
+    padding: 2rem;
+    border-radius: 2rem;
+    max-width: 35rem;
+  }
+
+  body {
+    padding: 0 1rem;
+  }
+}
